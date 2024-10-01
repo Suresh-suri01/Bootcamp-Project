@@ -42,17 +42,16 @@ steps:
   displayName: 'Pack the project - $(buildConfiguration)'
   inputs:
     command: 'pack'
-    projects: '**/*.csproj'
-    arguments: '--no-build --configuration $(buildConfiguration)'
-    versioningScheme: byPrereleaseNumber
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byPrereleaseNumber'
     majorVersion: '1'
     minorVersion: '0'
     patchVersion: '0'
 
-    - task: NuGetCommand@2
+- task: NuGetCommand@2
   displayName: 'Publish NuGet package'
   inputs:
-    command: push
-    feedPublish: '$(System.TeamProject)/pubart-feed'
-    allowPackageConflicts: true
+   command: push
+   feedPublish: '$(System.TeamProject)/pubart-feed'
+   allowPackageConflicts: true
   condition: succeeded()
