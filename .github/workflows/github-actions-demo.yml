@@ -4,7 +4,7 @@ on:
     types: [opened]
   push:
     paths:
-    - 'Bootcamp-project/**/*' 
+    - 'Bootcamp-project/Tailspin.SpaceGame.Web/**/*' 
     
 jobs:
   Explore-GitHub-Actions:
