@@ -4,7 +4,7 @@ on:
     types: [opened]
   push:
     paths:
-    - 'code/src/AttendeeSite/**/*' 
+    - 'Tailspin.SpaceGame.Web/**/*' 
     
 jobs:
   Explore-GitHub-Actions:
